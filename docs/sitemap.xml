@@ -4,14 +4,31 @@
   
   <url>
     <loc>https://lubaoyilang.github.io/</loc>
+    <lastmod>2021-01-15T17:10:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://lubaoyilang.github.io/categories/</loc>
+    <loc>https://lubaoyilang.github.io/first/</loc>
+    <lastmod>2021-01-15T17:10:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lubaoyilang.github.io/tags/ios/</loc>
+    <lastmod>2021-01-15T17:10:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lubaoyilang.github.io/post/</loc>
+    <lastmod>2021-01-15T17:10:13+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://lubaoyilang.github.io/tags/</loc>
+    <lastmod>2021-01-15T17:10:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lubaoyilang.github.io/categories/</loc>
   </url>
   
 </urlset>

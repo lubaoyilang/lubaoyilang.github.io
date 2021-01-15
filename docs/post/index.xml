@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog</title>
-    <link>https://lubaoyilang.github.io/</link>
-    <description>Recent content on Blog</description>
+    <title>Posts on Blog</title>
+    <link>https://lubaoyilang.github.io/post/</link>
+    <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jan 2021 17:10:13 +0800</lastBuildDate><atom:link href="https://lubaoyilang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jan 2021 17:10:13 +0800</lastBuildDate><atom:link href="https://lubaoyilang.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First</title>
       <link>https://lubaoyilang.github.io/first/</link>
