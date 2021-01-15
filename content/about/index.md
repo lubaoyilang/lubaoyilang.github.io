@@ -1,7 +1,6 @@
 ---
 title: "About"
 date: 2021-01-15T17:09:06+08:00
-draft: true
 ---
 
 1
