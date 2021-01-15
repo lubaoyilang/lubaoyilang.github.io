@@ -1,6 +1,9 @@
 baseURL = "https://lubaoyilang.github.io/"
+publishDir = "docs"
+
 
 title = "Blog"
+
 
 
 theme = "cayman-hugo-theme"
