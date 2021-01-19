@@ -1,76 +1,90 @@
 baseURL = "https://lubaoyilang.github.io/"
 publishDir = "docs"
 
+builddrafts                = false
+languageCode               = "zn-Hans"
+canonifyurls               = true
+contentdir                 = "content"
+layoutdir                  = "layouts"
+publishdir                 = "public"
+enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
+Paginate                   = 3
 
-title = "Blog"
+theme                      = "AllinOne"
+title                      = "Orianna"
 
-
-
-theme = "cayman-hugo-theme"
-
-languageCode = "en-us"
-defaultContentLanguage = "en"
-
-
-# Syntax highlighting
-pygmentsCodefences = true
-pygmentsStyle = "pygments"
-
+pygmentsuseclasses         = true
 
 
 [permalinks]
-  post = "/:filename/"
+  blog                     = "blog/:year-:month/:slug/"
 
-[params]
-  # Header text, can be markdown
-  project_name = "苏察哈尔灿"
-  project_tagline = "种一棵树,最好的时间是10年前,其次是现在."
 
-  # Date format for post list and single pages
-  # For more date formats see https://gohugo.io/functions/format/
-  dateFormat = "2006-01-02"
+[taxonomies]
+  tag                      = "tags"
+  series                   = "series"
+  category                 = "categories"
 
-  # Footer text, can be markdown
-  footer = ""
-
-  # If true, the CSS/JS for Katex math typesetting are enabled
-  katex = true
-
-  # Breakpoints
-  large_breakpoint = "64em"
-  medium_breakpoint = "42em"
-
-  # Header colors
-  header_heading_color = "#fff"
-  header_background_color = "#159957"
-  header_background_color_secondary = "#155799"
-
-  # Text colors
-  section_headings_color = "#159957"
-  body_text_color = "#606c71"
-  body_link_color = "#1e6bb8"
-  blockquote_text_color = "#819198"
-
-  # Code colors
-  code_background_color = "#f3f6fa"
-  code_text_color = "#567482"
-
-  # Border colors
-  border_color = "#dce6f0"
-  table_border_color = "#e9ebec"
-  hr_border_color = "#eff0f1"
 
 [menu]
-  [[menu.nav]]
-    name = "Blog"
-    url = "/"
-    weight = 1
-  [[menu.nav]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
-  [[menu.nav]]
-    name = "About"
-    url = "/about/"
-    weight = 3
+  [[menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "blog/"  
+
+  [[menu.main]]
+    name                   = "Moment"
+    weight                 = -110
+    identifier             = "moment"
+    url                    = "moment/" 
+
+  [[menu.main]]
+    name                   = "About"
+    weight                 = -100
+    identifier             = "about"
+    url                    = "about/"  
+
+ 
+
+[params]
+  faviconfile              = "img/zheng.png"               # from static/
+  avatar                   = "img/profile.jpg"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Orianna"
+  description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
+  welcome_head             = "Hello, World!"
+  welcome_word             = "~ No Day But Today ~"
+
+  latestpostscount         = 5                             # how many posts to display on the home page
+  bloggroupby              = 'month'
+  dateform                 = "Jan 2, 2006"
+  dateformfull             = "2006-01-02  Monday  15:04:05"
+  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
+
+  # slides
+  slidesDirPath            = "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
+
+  # highlighting 
+  highlightjs              = true
+
+  # latex
+  katex                    = true
+
+  # links
+  email                    = "you@email.com"
+  github                   = "//github.com/you"
+  linkedin                 = "//linkedin.com/in/you"
+  facebook                 = "//facebook.com/you"
+  googleplus               = "//google.com/you"
+  twitter                  = "//twitter.com/you" 
+  px500                    = "//px500"
+  instagram                = "//instagram.com/you"
+  include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
   
+  # analytics
+  googleAnalytics          = "your-google-analytic-id"
+    
+    
