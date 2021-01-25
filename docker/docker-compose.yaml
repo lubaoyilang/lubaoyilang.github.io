@@ -9,7 +9,11 @@ services:
       POSTGRES_PASSWORD: luyuda 
       POSTGRES_USER: luyuda 
       POSTGRES_DB: luyudadb
-    
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./store/postgresql/data:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: pgadmin_dc
@@ -34,6 +38,8 @@ services:
     ports:
     - "6379:6379"
     restart: always
+    volumes:
+      - ./store/redis/data:/data
   etcd1:
     image: "quay.io/coreos/etcd:v3.4.7"
     entrypoint: /usr/local/bin/etcd
@@ -92,5 +98,65 @@ services:
     volumes:
       - ./store/etcd3/data:/etcd_data
 
-    
+  rmqnamesrv:
+    image: foxiswho/rocketmq:4.7.0
+    container_name: rmqnamesrv
+    ports:
+      - 9876:9876
+    volumes:
+      - ./store/rmq/logs:/opt/logs
+      - ./store/rmq/store:/opt/store
+    environment:
+      JAVA_OPT_EXT: "-Duser.home=/opt -Xms64M -Xmx128M -Xmn128m"
+    command: ["sh", "mqnamesrv"]
+    networks:
+      rmq:
+        aliases:
+          - rmqnamesrv
+  rmqbroker:
+    image: foxiswho/rocketmq:4.7.0
+    container_name: rmqbroker
+    ports:
+      - 10909:10909
+      - 10911:10911
+    volumes:
+      - ./store/rmq/logs:/opt/logs
+      - ./store/rmq/store:/opt/store
+      - ./conf/rmq/broker.conf:/etc/rocketmq/broker.conf
+    environment:
+      JAVA_OPT_EXT: "-Duser.home=/opt -Xms64M -Xmx128M -Xmn128m"
+    command:
+      [
+        "sh",
+        "mqbroker",
+        "-c",
+        "/etc/rocketmq/broker.conf",
+        "-n",
+        "rmqnamesrv:9876",
+        "autoCreateTopicEnable=true",
+      ]
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqbroker
+
+  rmqconsole:
+    image: styletang/rocketmq-console-ng
+    container_name: rmqconsole
+    ports:
+      - 8180:8080
+    environment:
+      JAVA_OPTS: "-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqconsole
+networks:
+  rmq:
+    name: rmq
+    driver: bridge
   
