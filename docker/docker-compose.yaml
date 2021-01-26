@@ -25,6 +25,7 @@ services:
       - "5050:80"
   rabbitmq:
     image: bitnami/rabbitmq
+    container_name: rabbitmq
     ports:
     - "4369:4369"
     - "5672:5672"
@@ -36,6 +37,7 @@ services:
       RABBITMQ_PASSWORD: luyuda 
   redis:
     image: redis:alpine
+    container_name: redis
     ports:
     - "6379:6379"
     restart: always
@@ -44,6 +46,7 @@ services:
   etcd1:
     image: "quay.io/coreos/etcd:v3.4.7"
     entrypoint: /usr/local/bin/etcd
+    container_name: etcd-3.4.7
     command:
       - '--name=etcd1'
       - '--data-dir=/etcd_data'
@@ -117,27 +120,6 @@ services:
       rmq:
         aliases:
           - rmqconsole
-  zookeeper:
-    image: wurstmeister/zookeeper
-    volumes:
-      - ./store/zookeeper:/data
-    ports:
-      - 2182:2181
-       
-  kafka9094:
-    image: wurstmeister/kafka
-    ports:
-      - 9092:9092
-    environment:
-      KAFKA_BROKER_ID: 0
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.1.60:9092
-      KAFKA_CREATE_TOPICS: "kafeidou:2:0"   #kafka启动后初始化一个有2个partition(分区)0个副本名叫kafeidou的topic 
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-    volumes:
-      - ./store/kafka-logs:/kafka
-    depends_on:
-      - zookeeper
 
 
 networks:
