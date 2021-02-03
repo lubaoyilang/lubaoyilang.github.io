@@ -3,4 +3,4 @@
 	url = https://github.com/zwbetz-gh/cayman-hugo-theme.git
 [submodule "themes/AllinOne"]
 	path = themes/AllinOne
-	url = https://github.com/orianna-zzo/AllinOne.git
+	url = https://github.com/lubaoyilang/AllinOne
