@@ -9,3 +9,32 @@ img = "images/blog/2018-08/test5.jpg"
 summary = "How I build up my personal website"
 
 
+[[series]]
+name = "iOS"
+img = "" 
+summary = "How I build up my personal website"
+
+[[series]]
+name = "iOS进阶"
+img = "images/blog/2018-08/test3.jpg" 
+summary = "How I build up my personal website"
+
+[[series]]
+name = "Golang"
+img = "diy/golang.jpg" 
+summary = "How I build up my personal website"
+
+[[series]]
+name = "PostGresSql"
+img = "" 
+summary = "How I build up my personal website"
+
+[[series]]
+name = "LeeCode"
+img = "" 
+summary = "How I build up my personal website"
+
+[[series]]
+name = "Flutter"
+img = "" 
+summary = "How I build up my personal website"
