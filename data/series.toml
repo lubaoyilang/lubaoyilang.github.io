@@ -1,40 +1,24 @@
 [[series]]
-name = "观后repo"
-img = "images/blog/2018-08/test3.jpg"
-summary = "This is the place I write reviews"
+name = "ios"
+img = "images/series/ios.jpg" 
+summary = "iOS开发"
 
 [[series]]
-name = "blog养成记"
-img = "images/blog/2018-08/test5.jpg"
-summary = "How I build up my personal website"
-
+name = "golang"
+img = "images/series/golang.jpg" 
+summary = "Golang一条龙"
 
 [[series]]
-name = "iOS"
+name = "postgresql"
 img = "" 
-summary = "How I build up my personal website"
+summary = "学术派"
 
 [[series]]
-name = "iOS进阶"
-img = "images/blog/2018-08/test3.jpg" 
-summary = "How I build up my personal website"
+name = "leecode"
+img = "images/series/leecode.jpg" 
+summary = "算法基本功"
 
 [[series]]
-name = "Golang"
-img = "diy/golang.jpg" 
-summary = "How I build up my personal website"
-
-[[series]]
-name = "PostGresSql"
-img = "" 
-summary = "How I build up my personal website"
-
-[[series]]
-name = "LeeCode"
-img = "" 
-summary = "How I build up my personal website"
-
-[[series]]
-name = "Flutter"
-img = "" 
-summary = "How I build up my personal website"
+name = "flutter"
+img = "images/series/flutter.jpg" 
+summary = "跨平台"
