@@ -64,22 +64,20 @@
 int reverse(int x){
 
     
-    int ret = 0;
+    long ret = 0;
 
     // int total = abs(x);
 
 
-    while (x<=0)
+    while (x>0 || x<0)
     {
-        int rtm = x % 10
         
-        ret = ret * 10 + rtm;
-
-        x = x/10
+        ret = ret * 10 + x % 10;
+        x = x/10;
 
     }
 
-    return ret;
+    return ret>INT_MAX || ret<INT_MIN ? 0 :ret;
     
 
 
